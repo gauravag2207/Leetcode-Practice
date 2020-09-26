@@ -17,13 +17,11 @@ Output:
 ### Time: O(n)
 ### Space: O(1)
 
-class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         for i in range(len(nums)):
             newIdx= abs(nums[i])-1
             if(nums[newIdx]>0):
                 nums[newIdx] *= -1
-            
         res=[]
         #print (nums)
         for j in range (len(nums)):
@@ -34,13 +32,11 @@ class Solution:
 ### Time: O(n)
 ### Space: O(n)
 
-class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         numsHash={}
         for i in range(len(nums)):
             if(nums[i] not in numsHash):
                 numsHash[nums[i]]=1
-    
         res=[]
         for i in range (1, len(nums)+1):
             if i not in numsHash:
