@@ -14,8 +14,7 @@ Output:
 
 ## Solutions
 
-### Time: O(n)
-### Space: O(1)
+### Time: O(n) | Space: O(1)
 
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         for i in range(len(nums)):
@@ -29,8 +28,7 @@ Output:
                 res.append(j+1)
         return res
 
-### Time: O(n)
-### Space: O(n)
+### Time: O(n) | Space: O(n)
 
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         numsHash={}
