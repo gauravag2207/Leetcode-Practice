@@ -1,10 +1,10 @@
-## Find All Numbers Disappeared in an Array\
+## 1. Find All Numbers Disappeared in an Array
 
-Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.\
+Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
 
-Find all the elements of [1, n] inclusive that do not appear in this array.\
+Find all the elements of [1, n] inclusive that do not appear in this array.
 
-Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.\
+Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
 
 Input:
 [4,3,2,7,8,2,3,1]
@@ -14,8 +14,8 @@ Output:
 
 ## Solutions
 
-Time: O(n)
-Space: O(1)
+### Time: O(n)
+### Space: O(1)
 
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
@@ -31,8 +31,8 @@ class Solution:
                 res.append(j+1)
         return res
 
-Time: O(n)
-Space: O(n)
+### Time: O(n)
+### Space: O(n)
 
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
