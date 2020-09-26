@@ -85,4 +85,77 @@ Explanation: After calling your function, the input array is modified to: [1,0,0
                 pos_dups-=1
                 arr[i+pos_dups]=0
 
+## 3. Merge Sorted Array
 
+Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+
+Note:
+
+The number of elements initialized in nums1 and nums2 are m and n respectively.
+
+You may assume that nums1 has enough space (size that is equal to m + n) to hold additional elements from nums2.
+
+Input:
+
+nums1 = [1,2,3,0,0,0], m = 3
+
+nums2 = [2,5,6],       n = 3
+
+Output: [1,2,2,3,5,6]
+
+## Solution
+
+### Time: O(n+m)
+
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        i=m-1
+        j=n-1
+        k=m+n-1
+        while (i>=0 and j>=0):
+            if(nums1[i]>nums2[j]):
+                nums1[k]=nums1[i]
+                i-=1
+            else:
+                nums1[k]=nums2[j]
+                j-=1
+            k-=1
+        while(j>=0):
+            nums1[k]=nums2[j]
+            j-=1
+            k-=1
+            
+## 4. Remove Element
+
+Given an array nums and a value val, remove all instances of that value in-place and return the new length.
+
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+
+The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+
+Input:
+
+Given nums = [3,2,2,3], val = 3,
+
+Your function should return length = 2, with the first two elements of nums being 2.
+
+It doesn't matter what you leave beyond the returned length.
+
+## Solution
+
+### Time: O(n) | Space: O(1)
+
+    def removeElement(self, nums: List[int], val: int) -> int:
+        start=0
+        end = len(nums)
+        
+        while (start<end):
+            if(nums[start]==val):
+                nums[start]=nums[end-1]
+                end-=1
+            else:
+                start+=1
+                
+        return end
